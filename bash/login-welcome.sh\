@@ -1,0 +1,80 @@
+#!/bin/bash
+#
+# This script produces a dynamic welcome message
+# it should look like
+#   Welcome to planet hostname, title name!
+
+# Task 1: Use the variable $USER instead of the myname variable to get your na$
+# Task 2: Dynamically generate the value for your hostname variable using the $
+# Task 3: Add the time and day of the week to the welcome message using the fo$
+#   Use a format like this:
+#   It is weekday at HH:MM AM.
+# Task 4: Set the title using the day of the week
+#   e.g. On Monday it might be Optimist, Tuesday might be Realist, Wednesday m$
+#   You will need multiple tests to set a title
+#   Invent your own titles, do not use the ones from this example
+
+###############
+# Variables   #
+###############
+title1="monday is sunny day"
+title2="tuesday is rainy day"
+title3="wednesday is cold day"
+title4="thursday is fair day"
+title5="friday is hot day"
+title6="saturday is bright day"
+title7="sunday is fun day"
+myname="$USER"
+
+dayofweek=$(date +%A)
+currenttime=$(date +%I:%M\ %p)
+###############
+# Main        #
+###############
+EOF
+
+
+
+if [ "dayofweek" = "Monday" ]
+then
+cat <<EOF
+Welcome to planet $hostname, $title1 $USER
+It is $currenttitle on $dayofweek
+EOF
+elif [ "$dayofweek" = "Tuesday" ]
+then 
+cat <<EOF
+Welcome to planet $hostname, $title2 $USER
+It is $currenttitle on $dayofweek
+EOF
+elif [ "$dayofweek" = "Wednesday" ]
+then
+cat <<EOF
+Welcome to planet $hostname, $title3 $USER
+It is $currenttitle on $dayofweek
+EOF
+elif [ "$dayofweek" = "Thursday" ]
+then 
+Welcome to planet $hostname, $title4 $USER
+It is $currenttitle on $dayofweek
+EOF
+
+elif [ "$dayofweek" = "Friday" ]
+then 
+Welcome to planet $hostname, $title5 $USER
+It is $currenttitle on $dayofweek
+EOF
+
+elif [ "$dayofweek" = "Saturday" ]
+then 
+Welcome to planet $hostname, $title6 $USER
+It is $currenttitle on $dayofweek
+EOF
+
+elif [ "$dayofweek" = "Sunday" ]
+then
+Welcome to planet $hostname, $title7 $USER
+It is $currenttitle on $dayofweek
+EOF
+
+fi
