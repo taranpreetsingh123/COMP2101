@@ -16,8 +16,7 @@
 ###############
 # Variables   #
 ###############
-
-title="overload"
+hostname=$(hostname)
 myname=$USER
 
 weekday=$(date +%A)
@@ -26,59 +25,46 @@ currenttime=$(date +%I:%M\ %p)
 # Main        #
 ###############
 
-title1="monday is sunny day"
-title2="tuesday is rainy day"
-title3="wednesday is cold day"
-title4="thursday is fair day"
-title5="friday is hot day"
-title6="saturday is bright day"
-title7="sunday is fun day"
-
 
 if [ "$weekday" = "Monday" ]
 then
-cat <<EOF
-Welcome to planet $hostname, $title1 $USER
-It is $currenttime on $weekday
-EOF
+  title="monday is sunny day"
+
 elif [ "$weekday" = "Tuesday" ]
-then 
-cat <<EOF
-Welcome to planet $hostname, $title2 $USER
-It is $currenttime on $weekday
-EOF
+then
+  title="tuesday is rainy day"
+
 elif [ "$weekday" = "Wednesday" ]
 then
-cat <<EOF
-Welcome to planet $hostname, $title3 $USER
-It is $currenttime on $weekday
-EOF
+  title="wednesday is cold day"
+
 elif [ "$weekday" = "Thursday" ]
-then 
-cat <<EOF
-Welcome to planet $hostname, $title4 $USER
-It is $currenttime on $weekday
-EOF
+then
+  title="thursday is fair day"
+
 
 elif [ "$weekday" = "Friday" ]
-then 
-cat <<EOF
-Welcome to planet $hostname, $title5 $USER
-It is $currentimee on $weekday
-EOF
+then
+  title="friday is hot day"
+
 
 elif [ "$weekday" = "Saturday" ]
-then 
-cat <<EOF
-Welcome to planet $hostname, $title6 $USER
-It is $currenttime on $weekday
-EOF
+then
+  title="saturday is bright day"
+
 
 elif [ "$weekday" = "Sunday" ]
 then
-cat <<EOF
-Welcome to planet $hostname, $title7 $USER
-It is $currenttime on $weekday
-EOF
+  title="sunday is fun day"
 
 fi
+
+variable=$(cat <<EOF
+Welcome to planet $hostname,"$title $myname!"
+IT is $weekday at $currenttime
+EOF
+)
+
+cat <<EOF
+$(cowsay $variable)
+EOF
